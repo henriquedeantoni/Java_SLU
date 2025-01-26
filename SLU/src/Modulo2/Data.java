@@ -3,9 +3,9 @@ package Modulo2;
 public class Data {
 
 	// atributo
-		private int digito;
-		private String digitoString;
-		private String digitoInvertido;
+		private String dia;
+		private String mes;
+		private String ano;
 		
 		// setters and getters
 		public void setDigito(int digito)
