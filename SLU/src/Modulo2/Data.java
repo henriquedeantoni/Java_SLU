@@ -8,51 +8,63 @@ public class Data {
 		private String ano;
 		
 		// setters and getters
-		public void setDigito(int digito)
+		public void setDia(String dia)
 		{
-			this.digito = digito;
-			this.digitoString = Integer.toString(digito);
-			this.digitoInvertido = new StringBuilder(digitoString).reverse().toString();
+			this.dia = dia;
 		}
 		
-		public int getDigito()
+		public String getDia()
 		{
-			return digito;
+			return dia;
 		}
 		
-		public String getDigitoString()
+		public void setMes(String mes)
 		{
-			return digitoString;
-		}	
-		
-		public String getDigitoInvertido()
-		{
-			return digitoInvertido;
+			this.mes = mes;
 		}
 		
-		public Digitos()
+		public String getMes()
 		{
-			
+			return mes;
 		}
+
+		
+		public void setAno(String ano)
+		{
+			this.ano = ano;
+		}
+		
+		public String getAno()
+		{
+			return ano;
+		}
+		
 		
 		// construtor
-		public Digitos(int digito ) {
-			this.digito = digito;
-		}
+	    public Data(String mes, String dia, String ano) {
+	        this.mes = mes;
+	        this.dia = dia;
+	        this.ano = ano;
+	    }
 		
-		// métodos
-		
-		public void ImprimeDigitos()
-		{
-			System.out.println("Array original:");
-	        for (int i = 0; i<digitoString.length(); i++) {
-	            System.out.print(digitoString.charAt(i));
-	        }
+		public enum Dia{
+			DOMINGO("Dom"),
+		    SEGUNDA("Seg"),
+		    TERÇA("Ter"),
+		    QUARTA("Qua"),
+		    QUINTA("Qui"),
+		    SEXTA("Sex"),
+		    SÁBADO("Sab");
 
-	        System.out.println("\nArray invertido:");
-	        for (int i = 0; i<digitoString.length(); i++) {
-	            System.out.print(digitoString.charAt(i));
-	        } 
+			private final String nome;
+			
+			Dia(String nome) {
+				this nome = nome;
+			};
+			
+			public String getNome() {
+		        return nome;
+		    }
 		}
 
 }
