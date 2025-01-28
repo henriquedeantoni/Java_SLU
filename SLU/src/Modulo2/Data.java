@@ -2,69 +2,49 @@ package Modulo2;
 
 public class Data {
 
-	// atributo
-		private String dia;
-		private String mes;
-		private String ano;
-		
-		// setters and getters
-		public void setDia(String dia)
-		{
-			this.dia = dia;
-		}
-		
-		public String getDia()
-		{
-			return dia;
-		}
-		
-		public void setMes(String mes)
-		{
-			this.mes = mes;
-		}
-		
-		public String getMes()
-		{
-			return mes;
-		}
+	
+	private int mes;
+	private int dia;
+	private int ano;
 
+	// Construtor
+	public Data()
+	{
 		
-		public void setAno(String ano)
-		{
-			this.ano = ano;
-		}
-		
-		public String getAno()
-		{
-			return ano;
-		}
-		
-		
-		// construtor
-	    public Data(String mes, String dia, String ano) {
-	        this.mes = mes;
-	        this.dia = dia;
-	        this.ano = ano;
-	    }
-		
-		public enum Dia{
-			DOMINGO("Dom"),
-		    SEGUNDA("Seg"),
-		    TERÇA("Ter"),
-		    QUARTA("Qua"),
-		    QUINTA("Qui"),
-		    SEXTA("Sex"),
-		    SÁBADO("Sab");
+	}
+	public Data(int mes, int dia, int ano) {
+		this.mes = mes;
+	    this.dia = dia;
+	    this.ano = ano;
+	}
 
-			private final String nome;
-			
-			Dia(String nome) {
-				this nome = nome;
-			};
-			
-			public String getNome() {
-		        return nome;
-		    }
-		}
+	// setters getters
+	public void setMes(int mes) {
+		this.mes = mes;
+	}
 
+	public int getMes() {
+		return mes;
+	}
+
+	public void setDia(int dia) {
+		this.dia = dia;
+	}
+
+	public int getDia() {
+		return dia;
+	}
+
+	public void setAno(int ano) {
+		this.ano = ano;
+	}
+
+	public int getAno() {
+		return ano;
+	}
+
+	// Métodos
+	public void showDate() {
+		System.out.println(mes + "/" + dia + "/" + ano);
+	}
 }
