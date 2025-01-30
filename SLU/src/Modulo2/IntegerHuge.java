@@ -36,13 +36,13 @@ public class IntegerHuge {
 		return novaMatriz;
 	}
 	
-	public String ToString(IntegerHuge outraMatriz)
+	public static String ToString(int[] outraMatriz)
 	{
 		StringBuilder novaString = new StringBuilder();
 		
-		for(int i=0; i<outraMatriz.matrizIntDigitosHuge.length; i++)
+		for(int i=0; i<outraMatriz.length; i++)
 		{
-			novaString.append(Character.forDigit(matrizIntDigitosHuge[i], 10));
+			novaString.append(Character.forDigit(outraMatriz[i], 10));
 		}
 		
 		return novaString.toString();
@@ -127,6 +127,34 @@ public class IntegerHuge {
 		if (decimal == 1)
 		{
 			resultadoMatrizInt[0]=decimal;
+		}
+				
+		return resultadoMatrizInt;
+	}
+	
+	public int[] subtract(IntegerHuge primeiraMatriz, IntegerHuge segundaMatriz)
+	{
+		int decimal=0;
+		int[] primeiraMatrizInt = Parse(primeiraMatriz.matrizCharDigitosHuge);
+		int[] segundaMatrizInt = Parse(segundaMatriz.matrizCharDigitosHuge);
+		int[] resultadoMatrizInt = new int[primeiraMatriz.matrizCharDigitosHuge.length()];
+		
+		for(int i=primeiraMatriz.matrizCharDigitosHuge.length()-1; i>0; i--)
+		{
+			if(primeiraMatrizInt[i]-segundaMatrizInt[i]<0)
+			{
+				resultadoMatrizInt[i] = 10+primeiraMatrizInt[i]-segundaMatrizInt[i]+decimal;
+				decimal=-1;
+			}
+			else
+			{
+				resultadoMatrizInt[i] = primeiraMatrizInt[i]+segundaMatrizInt[i]+decimal;
+				decimal=0;
+			}
+		}
+		if (decimal == -1)
+		{
+			resultadoMatrizInt[0]=0;
 		}
 				
 		return resultadoMatrizInt;
