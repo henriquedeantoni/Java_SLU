@@ -9,13 +9,14 @@ public class TesteQuadrado_Exercicio1 {
 	public static void main(String[] args) {
 		
         Scanner scanner = new Scanner(System.in);
+        QuadradoGrafico quadrado1 = new QuadradoGrafico();
         
+        System.out.println("Digite o tamanho do lado do quadrado um numero inteiro: ");
+        int tamanhoLado1 = Integer.parseInt(scanner.nextLine());
         
-		Digitos digit = new Digitos();
-		System.out.println("Digite um numero: ");
-		int numero = Integer.parseInt(scanner.nextLine());
-		digit.setDigito(numero);
-		digit.ImprimeDigitos();		
+        quadrado1.setTamanhoLado(tamanhoLado1);
+        
+        quadrado1.ImprimeQuadrado(tamanhoLado1);
 
 	}
 
