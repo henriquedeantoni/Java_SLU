@@ -8,9 +8,9 @@ public class TesteDuplicata_Exercicio1 {
 		
 		Scanner scanner = new Scanner(System.in);
 		
-		Duplicata novoArray = new Duplicata();
+		Duplicata novoArray = new Duplicata(null);
 		
-		While(true)
+		while(true)
 		{
             System.out.println("\nEscolha uma opção:");
             System.out.println("1 - Adicionar número");
@@ -28,7 +28,7 @@ public class TesteDuplicata_Exercicio1 {
                     novoArray.AdicionaNumero(numAdd);
                     break;
                 case 2:
-                	novoArray.ImprimeNumeros(null);
+                	novoArray.ImprimeNumeros();
                     break;
                 default:
                     System.out.println("Opção inválida! Tente novamente.");
