@@ -1,33 +1,40 @@
 package Modulo4;
 
 public class Duplicata {
-	private int[] numeros;
+	private int[] numeros = null;
 	
-	//construtor
-	
-	public Duplicata()
+	public Duplicata(int[] numeros)
 	{		
-		this.numeros = null;
+		this.numeros = numeros ;
 	}
 	
-	public int[] AdicionaNumero(int novoNumero) 
+	//construtor
+	public void setDuplicate(int[] numeros)
 	{
-		if(NaoDuplicata(numeros, novoNumero))
+		this.numeros = numeros;
+	}
+	
+	public void AdicionaNumero(int novoNumero) 
+	{
+		
+		if(numeros == null)
+		{
+			int[] novaArray = new int[1];
+			novaArray[0]=novoNumero;
+			setDuplicate(novaArray);
+		}
+		else if(NaoDuplicata(numeros, novoNumero))
 		{
 			int comprimento = numeros.length;
-		
-			int[] novaArray = new int[comprimento];
-		
+			int[] novaArray = new int[comprimento+1];
 			for(int i=0; i<comprimento; i++)
 			{
 				novaArray[i]=numeros[i];
 			}
-			novaArray[comprimento-1]=novoNumero;
+			novaArray[comprimento]=novoNumero;
 			
-			return novaArray;
+			setDuplicate(novaArray);
 		}
-		System.out.println("O número informado já existe, não pode duplicar valor!");
-		return numeros;
 	}
 	
 	private boolean NaoDuplicata(int[] arrayPrevia, int numero)
@@ -36,20 +43,22 @@ public class Duplicata {
 		{
 			if(arrayPrevia[i]==numero)
 			{
+				System.out.println("O número informado já existe, não pode duplicar valor!");
 				return false;
 			}
 		}
 		return true;
 	}
 	
-	public static void ImprimeNumeros(int[] arrayPrevia) {
-        if (arrayPrevia == null || arrayPrevia.length == 0) {
+	public void ImprimeNumeros() {
+		
+        if (numeros == null || numeros.length == 0) {
             System.out.println("O array está vazio ou não foi inicializado.");
             return;
         }
 
         System.out.print("Números no array: ");
-        for (int num : arrayPrevia) {
+        for (int num : numeros) {
             System.out.print(num + " ");
         }
         System.out.println();
