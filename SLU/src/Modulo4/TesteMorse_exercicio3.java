@@ -2,14 +2,12 @@ package Modulo4;
 
 import java.util.Scanner;
 
-import Modulo2.Empregado;
-
-public class TesteConversor_Exercicio2 {
+public class TesteMorse_exercicio3 {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
         
-        System.out.println("Faça uma pergunta de conversão de unidades, \n Por exemplo.: \n Quantos centímetros tem um metro? \n Quantos quilogramas tem uma libra?");
+        System.out.println("Escreve uma mensagem:");
         String pergunta1 = scanner.nextLine();
         
         RespostaConversor respostaConversor = new RespostaConversor(pergunta1);
