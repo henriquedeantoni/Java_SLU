@@ -8,9 +8,13 @@ public class TesteMorse_exercicio3 {
 		Scanner scanner = new Scanner(System.in);
         
         System.out.println("Escreve uma mensagem:");
-        String pergunta1 = scanner.nextLine();
+        String mensagem = scanner.nextLine();
         
-        RespostaConversor respostaConversor = new RespostaConversor(pergunta1);
+        Morse mensagemMorse1 = new Morse();
+        
+        mensagemMorse1.getMensagemDecodificada(mensagemMorse1);
+        
+        String[] mensagemCodificada = mensagemMorse1.CodificaMorse(mensagem, args, args)
         respostaConversor.setPergunta(pergunta1);
         System.out.println("Respondendo para : "+respostaConversor.getFrasePergunta());
         
