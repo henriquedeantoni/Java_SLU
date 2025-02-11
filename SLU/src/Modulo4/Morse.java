@@ -1,7 +1,7 @@
 package Modulo4;
 
 public class Morse {
-	private String[] mensagemMorse;
+	private String[] codigoMorse;
 	
 	private String mensagemDecodificada;
 	
@@ -44,6 +44,12 @@ public class Morse {
             "----."  // 9
         };
 	
+	public final static String[] dicionario = 
+	{
+			"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"
+	};
+	
+	
 	public void setMensagemDecodificada(String mensagemDecodificada)
 	{
 		this.mensagemDecodificada = mensagemDecodificada;
@@ -54,17 +60,55 @@ public class Morse {
 		return mensagemDecodificada;
 	}
 
-	public void setMensagemMorse(String[] mensagemMorse)
+	public void setCodigoMorse(String[] codigoMorse)
 	{
-		this.mensagemMorse = mensagemMorse;
+		this.codigoMorse = codigoMorse;
 	}
 	
-	public String[] getMensagemMorse()
+	public String[] getCodigoMorse()
 	{
-		return mensagemMorse;
+		return codigoMorse;
 	}
 	
-	public Morse() {}
+	public Morse()
+	{
+		
+	}
 	
+	public String TraduzMorse(String[] codigoMorse, String[] morse, String[] dicionario)
+	{
+		String mensagemTraduzida="";
+		
+		for(int i=0; i<codigoMorse.length; i++)
+		{
+			for(int j=0; j<morse.length; j++)
+			{
+				if(codigoMorse[i] == morse[j])
+				{
+					mensagemTraduzida+=dicionario[j];
+				}
+			}
+		}
+		
+		return mensagemTraduzida;
+	}
+	
+	public String[] CodificaMorse(String mensagemDecodificada, String[] morse, String[] dicionario)
+	{
+		String[] mensagemCodificada = new String[mensagemDecodificada.length()];
+		
+		for( int i=0; i<mensagemDecodificada.length(); i++)  
+		{
+			for(String letraDic : dicionario)
+			{
+				if(letraDic.charAt(0) == Character.toUpperCase(mensagemDecodificada.charAt(i)))
+				{
+					mensagemCodificada[i] = letraDic;
+				}
+			}
+		}
+		
+		return mensagemCodificada;
+	}
 	
 }
