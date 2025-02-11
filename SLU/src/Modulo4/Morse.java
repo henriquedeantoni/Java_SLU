@@ -103,12 +103,27 @@ public class Morse {
 			{
 				if(letraDic.charAt(0) == Character.toUpperCase(mensagemDecodificada.charAt(i)))
 				{
-					mensagemCodificada[i] = letraDic;
+					mensagemCodificada[i] = morse[i];
 				}
 			}
 		}
 		
 		return mensagemCodificada;
+	}
+	
+	public void ImprimeCodigoMorse(String[] codigoMorse)
+	{
+		System.out.println("Mensagem Codificada: ");
+		for(String codigos : codigoMorse)
+		{
+			System.out.print(codigos);
+		}
+	}
+	
+	public void ImprimeMensagem(String mensagem)
+	{
+		System.out.println("Mensagem decodificada: ");
+		System.out.println(mensagem);
 	}
 	
 }

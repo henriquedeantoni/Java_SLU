@@ -12,18 +12,11 @@ public class TesteMorse_exercicio3 {
         
         Morse mensagemMorse1 = new Morse();
         
-        mensagemMorse1.getMensagemDecodificada(mensagemMorse1);
+        mensagemMorse1.setMensagemDecodificada(mensagem);
         
-        String[] mensagemCodificada = mensagemMorse1.CodificaMorse(mensagem, args, args)
-        respostaConversor.setPergunta(pergunta1);
-        System.out.println("Respondendo para : "+respostaConversor.getFrasePergunta());
+        String[] mensagemCodificada = mensagemMorse1.CodificaMorse(mensagem, Morse.morse, Morse.dicionario);
         
-        for(int i=0; i<respostaConversor.getFrasePergunta().length; i++)
-        {
-        	System.out.println(respostaConversor.getFrasePergunta()[i]);
-        }
-        
-        System.out.println(respostaConversor.getPrimeiraUnidade());
+        mensagemMorse1.ImprimeCodigoMorse(mensagemCodificada);
 
 	}
 
