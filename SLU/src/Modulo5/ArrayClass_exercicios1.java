@@ -11,6 +11,13 @@ public class ArrayClass_exercicios1 {
 		System.out.println("Digite o tamanho do array");
 		
 		int size = Integer.parseInt(scanner.nextLine());
+		
+		ArrayClass arrayClass1 = new ArrayClass(size);
+		
+		arrayClass1.WriteArray(0);
+		arrayClass1.printArray(0);
+		
+		
 	}
 
 }

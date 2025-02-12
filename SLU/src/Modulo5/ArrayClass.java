@@ -1,35 +1,55 @@
 package Modulo5;
 
+import java.util.Scanner;
+
 public class ArrayClass {
 	private int size;
-	private int[] array = new int[size];
-	
-	public void setArray(int[] array)
-	{
-		this.array=array;
-	}
+	private int[] array;
 	
 	public void setSize(int size)
 	{
 		this.size=size;
 	}
 	
-	public ArrayClass(int[] array, int size)
+	public int[] getArray()
 	{
-		this.size = size;
-		this.array = array;
+		return array;
 	}
 	
-	public static void printArray(int[] array, int index)
+	public ArrayClass( int size)
 	{
-		if(index == array.length)
+		this.size = size;
+		this.array = new int[size];
+	}
+	
+	public void WriteArray( int initialIndex)
+	{
+		Scanner scanner = new Scanner(System.in);
+		
+		if(initialIndex == array.length)
+		{
+			return;
+		}
+		System.out.println("Digite o proximo elemento");
+		array[initialIndex] = Integer.parseInt(scanner.nextLine());
+		
+		WriteArray(initialIndex+1);
+	}	
+	
+	public void printArray(int initialIndex)
+	{
+		if(initialIndex==0)
+		{
+			System.out.print("A matrix é: ");
+		}
+		if(initialIndex == array.length)
 		{
 			return;
 		}
 		
-		System.out.print(array[index]+" ");
+		System.out.print(array[initialIndex]+" ");
 		
-		printArray(array, index+1);
+		printArray(initialIndex+1);
 	}
 	
 }
