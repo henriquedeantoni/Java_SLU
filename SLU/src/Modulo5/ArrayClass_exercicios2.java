@@ -2,7 +2,7 @@ package Modulo5;
 
 import java.util.Scanner;
 
-public class ArrayClass_exercicios1 {
+public class ArrayClass_exercicios2 {
 
 	public static void main(String[] args) {
 		

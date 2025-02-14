@@ -2,7 +2,7 @@ package Modulo5;
 
 import java.util.Scanner;
 
-public class ArrayClass {
+public class ArrayClass2 {
 	private int size;
 	private int[] array;
 	
@@ -16,7 +16,7 @@ public class ArrayClass {
 		return array;
 	}
 	
-	public ArrayClass( int size)
+	public ArrayClass2( int size)
 	{
 		this.size = size;
 		this.array = new int[size];
