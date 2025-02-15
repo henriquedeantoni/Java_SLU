@@ -52,4 +52,27 @@ public class ArrayClass {
 		printArray(initialIndex+1);
 	}
 	
+	public void printArrayReverse(int initialIndex)
+	{
+		if(initialIndex==array.length)
+		{
+			System.out.println("A matrix reversa é: ");
+		}
+		if(initialIndex == 0)
+		{
+			return;
+		}
+		
+		System.out.println(array[initialIndex-1]+" ");
+		
+		printArray(initialIndex-1);
+	}
+	
+	public int minimoRecursive(int initialIndex)
+	{
+		
+		
+		return 0;
+	}
+	
 }

@@ -17,6 +17,7 @@ public class ArrayClass_exercicios2 {
 		arrayClass1.WriteArray(0);
 		arrayClass1.printArray(0);
 		
+		arrayClass1.printArrayReverse(size);
 		
 	}
 
