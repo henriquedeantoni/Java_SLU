@@ -65,14 +65,19 @@ public class ArrayClass {
 		
 		System.out.println(array[initialIndex-1]+" ");
 		
-		printArray(initialIndex-1);
+		printArrayReverse(initialIndex-1);
 	}
 	
-	public int minimoRecursive(int initialIndex)
+	public int minimoRecursive(int[] array, int tamanho)
 	{
+		if (tamanho == 1) {
+            return array[0];
+        }
 		
+		int menorRestante = minimoRecursive(array, tamanho - 1);
 		
-		return 0;
+		return Math.min(menorRestante, array[tamanho - 1]);
+		
 	}
 	
 }
